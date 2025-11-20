@@ -17,6 +17,7 @@ public class TcpClientExample
 
                 using (NetworkStream stream = client.GetStream())
                 {
+                    for (global::System.Int32 i = 0; i < 50; i++)
                     // Отправка данных серверу
                     byte[] dataToSend = Encoding.UTF8.GetBytes(message);
                     await stream.WriteAsync(dataToSend, 0, dataToSend.Length);
